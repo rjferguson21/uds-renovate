@@ -85,12 +85,7 @@
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver-coerced{{/if}}",
       "datasourceTemplate": "docker",
-      "extractVersionTemplate": "{{#if extractVersion}}{{{extractVersion}}}{{else}}^(?<version>.*)${{/if}}",
-      "transform": {
-        "registryUrl": "return 'https://' + match;",
-        "depName": "return 'https://registry1.dso.mil/' + match;",
-        "currentValue": "return match;"
-      }
+      "extractVersionTemplate": "{{#if extractVersion}}{{{extractVersion}}}{{else}}^(?<version>.*)${{/if}}"
     },
     {
       "fileMatch": [
