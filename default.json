@@ -94,8 +94,7 @@
       "matchStringsStrategy": "recursive",
       "matchStrings": [
         "(?m)charts:(.|\\n)*?(^\\s{4}[\\w:]+|\\n$|^\\s{2}-)",
-        "(?m)-\\s\\S+:(?:[\\s\\S]*?)-\\s\\S+",
-        "(?m)(?:(?:(?:name:\\s(?<depName>.+))|(?:url:\\s(?<registryUrl>.+))|(?:version:\\s\"?(?<currentValue>.+)\"))(?:.|\\n)*?){3}"
+        "(?m)-\\s\\S+:(?:[\\s\\S]*?)-\\s\\S+"
       ],
       "datasourceTemplate": "helm"
     }
