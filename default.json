@@ -77,7 +77,7 @@
     {
       "fileMatch": [".*\\.ya?ml$"],
       "matchStrings": [
-        "registry:\\s*(?:\"[^\"]+\"|[^\"\\n]+)\\s*\\n\\s*(?:image|repository):\\s*(?:\"[^\"]+\"|[^\"\\n]+)\\s*\n\\s*tag:\\s*(?:\"[^\"]+\"|[^\"\\n]+)",
+        "registry:\\s*(?:\"[^\"]+\"|[^\"\\n]+)\\s*\\n\\s*(?:image|repository):\\s*(?:\"[^\"]+\"|[^\"\\n]+)\\s*\\n\\s*tag:\\s*(?:\"[^\"]+\"|[^\"\\n]+)",
         "(?:(?:(?:(?:image|repository):\\s\"(?<depName>[^\"]+)\")|(?:registry:\\s\"(?<registryUrl>[^\"]+)\")|(?:tag:\\s\"(?<currentValue>[^\"]+)\"))(?:.|\\n)*?){3}"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver-coerced{{/if}}",
@@ -93,7 +93,7 @@
       ],
       "matchStringsStrategy": "recursive",
       "matchStrings": [
-        "(?m)charts:(?:[\\s\\S])*images",
+        "(?m)charts:(.|\\n)*?(^\\s{4}[\\w:]+|\\n$|^\\s{2}-)",
         "(?m)-\\s\\S+:(?:[\\s\\S]*?)-\\s\\S+",
         "(?m)(?:(?:(?:name:\\s(?<depName>.+))|(?:url:\\s(?<registryUrl>.+))|(?:version:\\s(?<currentValue>.+)))(?:.|\\n)*?){3}"
       ],
