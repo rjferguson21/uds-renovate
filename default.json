@@ -88,7 +88,7 @@
       "extractVersionTemplate": "{{#if extractVersion}}{{{extractVersion}}}{{else}}^(?<version>.*)${{/if}}",
       "transform": {
         "registryUrl": "return 'https://' + match;",
-        "depName": "return context.registryUrl + '/' + match;",
+        "depName": "return (context.registryUrl ? context.registryUrl + '/' : 'https://registry1.dso.mil/') + match;",
         "currentValue": "return match;"
       }
     },
