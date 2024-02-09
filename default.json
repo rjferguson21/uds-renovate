@@ -86,8 +86,11 @@
       "datasourceTemplate": "docker",
       "extractVersionTemplate": "{{#if extractVersion}}{{{extractVersion}}}{{else}}^(?<version>.*)${{/if}}",
       "transform": {
+        "combine": {
+          "registryUrl": "{{ registryUrl }}"
+        },
         "registryUrl": "return 'https://' + match;",
-        "depName": "return context.registryUrl + '/' + match;",
+        "depName": "return context.combine.registryUrl + '/' + (match.trim());",
         "currentValue": "return match;"
       }
     },
