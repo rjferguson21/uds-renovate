@@ -22,9 +22,6 @@
   "pre-commit": {
     "enabled": true
   },
-  "helm-values": {
-    "fileMatch": ["./.+\\.yaml$"]
-  },
   "kubernetes": {
     "fileMatch": ["\\.yaml$"],
     "ignorePaths": [
@@ -107,7 +104,6 @@
     },
     {
     "matchDatasources": ["docker"],
-    "groupName": "Ironbank",
     "registryUrls": ["https://registry1.dso.mil"]
     }
   ]
