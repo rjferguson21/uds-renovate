@@ -87,9 +87,9 @@
       "datasourceTemplate": "docker",
       "extractVersionTemplate": "{{#if extractVersion}}{{{extractVersion}}}{{else}}^(?<version>.*)${{/if}}",
       "transform": {
-        "registryUrl": "console.log('Transforming registryUrl: ', match); logger.debug('Transforming registryUrl:', match); return 'https://' + match;",
-        "depName": "logger.debug('Transforming depName:', match); return (context.registryUrl || '') + '/' + match;",
-        "currentValue": "logger.debug('Transforming currentValue:', match); return match;"
+        "registryUrl": "return 'https://' + match;",
+        "depName": "return context.registryUrl + '/' + match;",
+        "currentValue": "return match;"
       }
     },
     {
