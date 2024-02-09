@@ -84,7 +84,12 @@
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver-coerced{{/if}}",
       "datasourceTemplate": "docker",
-      "extractVersionTemplate": "{{#if extractVersion}}{{{extractVersion}}}{{else}}^(?<version>.*)${{/if}}"
+      "extractVersionTemplate": "{{#if extractVersion}}{{{extractVersion}}}{{else}}^(?<version>.*)${{/if}}",
+      "transform": {
+        "depName": "return match;",
+        "registryUrl": "return 'https://' + match;",
+        "currentValue": "return match;"
+      }
     },
     {
       "fileMatch": [
