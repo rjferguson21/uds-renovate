@@ -1,5 +1,5 @@
 {
-  "loglevel": "debug",
+  "logLevel": "debug",
   "enabled": true,
   "forkProcessing": "enabled",
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
@@ -87,7 +87,7 @@
       "datasourceTemplate": "docker",
       "extractVersionTemplate": "{{#if extractVersion}}{{{extractVersion}}}{{else}}^(?<version>.*)${{/if}}",
       "transform": {
-        "registryUrl": "logger.debug('Transforming registryUrl:', match); return 'https://' + match;",
+        "registryUrl": "console.log('Transforming registryUrl: ', match); logger.debug('Transforming registryUrl:', match); return 'https://' + match;",
         "depName": "logger.debug('Transforming depName:', match); return (context.registryUrl || '') + '/' + match;",
         "currentValue": "logger.debug('Transforming currentValue:', match); return match;"
       }
